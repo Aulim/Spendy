@@ -15,6 +15,8 @@ namespace Spendy
 {
     public class InputFragment : Fragment
     {
+        static readonly List<string> bundle = new List<string>();
+
         List<Transaction> transaction = new List<Transaction>();
         FloatingActionButton fab;
         ListView listView;
@@ -22,12 +24,12 @@ namespace Spendy
         Button overviewButton;
         TextView overviewPlaceholder;
 
-        private List<string> DataToString()
+        private void AddDataToBundle()
         {
-            List<string> result = new List<string>();
-            for (int i = 0; i < transaction.Count; i++)
-                result.Add(transaction.ToString());
-            return result;
+            for(int i = 0; i < transaction.Count; i++)
+            {
+                bundle.Add(transaction[i].ToString());
+            }
         }
 
         private void addItem(Transaction trans)
@@ -114,7 +116,7 @@ namespace Spendy
             overviewButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(Activity, typeof(OverviewActivity));
-                var bundle = DataToString();
+                AddDataToBundle();
                 intent.PutStringArrayListExtra("data", bundle);
                 StartActivity(intent);
             };

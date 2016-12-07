@@ -80,8 +80,8 @@
     <Compile Include="Fragments\NewDialogFragment.cs" />
     <Compile Include="Adapters\InputAdapter.cs" />
     <Compile Include="Fragments\InputFragment.cs" />
-    <Compile Include="Activity\MainActivity.cs" />
-    <Compile Include="Activity\OverviewActivity.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="OverviewActivity.cs" />
     <Compile Include="Adapters\OverviewAdapter.cs" />
     <Compile Include="Models\OverviewData.cs" />
     <Compile Include="Adapters\TrackerAdapter.cs" />

@@ -23,11 +23,131 @@
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
     android:layout_marginBottom="20dp">
-    <ExpandableListView
-        android:id="@+id/DataListView"
-		    android:minWidth="25px"
-        android:minHeight="25px"
+    <!-- Monthly -->
+    <LinearLayout
+        android:id="@+id/headerM"
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFF"
+        android:orientation="horizontal">
+      <TextView
+          android:id="@+id/headerTextM"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:textStyle="bold"
+          android:gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/expandableM"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFF"
+        android:orientation="vertical">
+      <TextView
+          android:id="@+id/incomesTextM"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:id="@+id/expensesTextM"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:id="@+id/savingsTextM"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+    </LinearLayout>
+    <!-- Weekly -->
+    <LinearLayout
+        android:id="@+id/headerW"
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFF"
+        android:orientation="horizontal">
+      <TextView
+          android:id="@+id/headerTextW"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:textStyle="bold"
+          android:gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/expandableW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFF"
+        android:orientation="vertical">
+      <TextView
+          android:id="@+id/incomesTextW"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:id="@+id/expensesTextW"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:id="@+id/savingsTextW"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+    </LinearLayout>
+    <!-- Daily -->
+    <LinearLayout
+        android:id="@+id/headerD"
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFF"
+        android:orientation="horizontal">
+      <TextView
+          android:id="@+id/headerTextD"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:textStyle="bold"
+          android:gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/expandableD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFF"
+        android:orientation="vertical">
+      <TextView
+          android:id="@+id/incomesTextD"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:id="@+id/expensesTextD"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:id="@+id/savingsTextD"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp" />
+    </LinearLayout>
   </LinearLayout>
 </LinearLayout>

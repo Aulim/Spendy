@@ -9,24 +9,36 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Animation;
 
 namespace Spendy
 {
-    class OverviewAdapter : BaseAdapter
+    class OverviewAdapter : BaseAdapter<OverviewData>
     {
+        List<OverviewData> data;
+        Activity context;
+        LinearLayout mLinearItems;
 
-        Context context;
-
-        public OverviewAdapter(Context context)
+        public OverviewAdapter(Activity ctx, List<OverviewData> datas)
         {
-            this.context = context;
-
+            context = ctx;
+            data = datas;
         }
 
-
-        public override Java.Lang.Object GetItem(int position)
+        public override OverviewData this[int position]
         {
-            return position;
+            get
+            {
+                return data[position];
+            }
+        }
+
+        public override int Count
+        {
+            get
+            {
+                return data.Count;
+            }
         }
 
         public override long GetItemId(int position)
@@ -36,44 +48,58 @@ namespace Spendy
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
+            var item = data[position];
             var view = convertView;
-            OverviewAdapterViewHolder holder = null;
+            if (view == null)
+                view = context.LayoutInflater.Inflate(Resource.Layout.ListGroup, null);
 
-            if (view != null)
-                holder = view.Tag as OverviewAdapterViewHolder;
-
-            if (holder == null)
+            mLinearItems = view.FindViewById<LinearLayout>(Resource.Id.expandable);
+            mLinearItems.Visibility = ViewStates.Gone;
+            var mLinearHeader = view.FindViewById<LinearLayout>(Resource.Id.header);
+            mLinearHeader.Click += (s, e) =>
             {
-                holder = new OverviewAdapterViewHolder();
-                var inflater = context.GetSystemService(Context.LayoutInflaterService).JavaCast<LayoutInflater>();
-                //replace with your item and your holder items
-                //comment back in
-                //view = inflater.Inflate(Resource.Layout.item, parent, false);
-                //holder.Title = view.FindViewById<TextView>(Resource.Id.text);
-                view.Tag = holder;
-            }
+                if (mLinearItems.Visibility.Equals(ViewStates.Gone))
+                {
+                    mLinearItems.Visibility = ViewStates.Visible;
+                    int widthSpec = View.MeasureSpec.MakeMeasureSpec(0, MeasureSpecMode.Unspecified);
+                    int heightSpec = View.MeasureSpec.MakeMeasureSpec(0, MeasureSpecMode.Unspecified);
+                    mLinearItems.Measure(widthSpec, heightSpec);
 
+                    ValueAnimator mAnimator = slideAnimator(0, mLinearItems.MeasuredHeight);
+                    mAnimator.Start();
+                }
+                else
+                {
+                    int finalHeight = mLinearItems.Height;
 
-            //fill in your items
-            //holder.Title.Text = "new text here";
+                    ValueAnimator mAnimator = slideAnimator(finalHeight, 0);
+                    mAnimator.AnimationEnd += (object o,EventArgs ev) =>
+                    {
+                        mLinearItems.Visibility = ViewStates.Gone;
+                    };
+                }
+            };
+
+            view.FindViewById<TextView>(Resource.Id.headerText).Text = item.timeRange;
+            view.FindViewById<TextView>(Resource.Id.expensesText).Text = item.totalExpenses.ToString();
+            view.FindViewById<TextView>(Resource.Id.incomesText).Text = item.totalExpenses.ToString();
+            view.FindViewById<TextView>(Resource.Id.savingsText).Text = item.totalSaving.ToString();
 
             return view;
         }
 
-        //Fill in cound here, currently 0
-        public override int Count
+        private ValueAnimator slideAnimator(int start, int end)
         {
-            get
+            ValueAnimator animator = ValueAnimator.OfInt(start, end);
+            animator.Update += (object sender, ValueAnimator.AnimatorUpdateEventArgs e) =>
             {
-                return 0;
-            }
+                var value = (int)animator.AnimatedValue;
+                ViewGroup.LayoutParams layoutParams = mLinearItems.LayoutParameters;
+                layoutParams.Height = value;
+                mLinearItems.LayoutParameters = layoutParams;
+            };
+
+            return animator;
         }
-
-    }
-
-    class OverviewAdapterViewHolder : Java.Lang.Object
-    {
-        //Your adapter views to re-use
-        //public TextView Title { get; set; }
     }
 }
