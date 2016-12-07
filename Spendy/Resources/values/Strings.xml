@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World</string>
+    <string name="ApplicationName">Spendy</string>
+    <string-array name="menu">
+      <item>Edit</item>
+      <item>Delete</item>
+    </string-array>
+    <string-array name="new_menu">
+      <item>Expense</item>
+      <item>Income</item>
+    </string-array>
+</resources>
