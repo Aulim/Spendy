@@ -51,8 +51,12 @@ namespace Spendy
             var layout = View.FindViewById<LinearLayout>(Resource.Id.linearLayoutTracker);
             var addingText = View.FindViewById<Button>(Resource.Id.AddExpenseButton);
             addingText.SetBackgroundColor(Android.Graphics.Color.Rgb(129, 218, 247));
-            addingText.SetTextAppearance(Android.Resource.Style.TextAppearanceDeviceDefaultWidgetButton);
+            addingText.SetTextAppearance(Android.Resource.Style.TextAppearanceDeviceDefaultSmall);
             addingText.Alpha = 100;
+            addingText.Click += (o, e) =>
+            {
+
+            };
         }
     }
 }

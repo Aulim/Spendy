@@ -2,4 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp">
+    <TextView
+      android:text="Expenses for"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+    <EditText
+      android:id="@+id/expenseDialogNameText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="Date"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+    <DatePicker
+      android:id="@+id/expenseDialogDatePicker"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="Value"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+    <EditText
+      android:id="@+id/expenseDialogValueText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+  </LinearLayout>
+</LinearLayout>

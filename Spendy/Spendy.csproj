@@ -77,10 +77,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fragments\ExpenseDialogFragment.cs" />
     <Compile Include="Fragments\NewDialogFragment.cs" />
     <Compile Include="Adapters\InputAdapter.cs" />
     <Compile Include="Fragments\InputFragment.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\Expense.cs" />
     <Compile Include="OverviewActivity.cs" />
     <Compile Include="Adapters\OverviewAdapter.cs" />
     <Compile Include="Models\OverviewData.cs" />

@@ -13,32 +13,6 @@ using Java.Lang;
 
 namespace Spendy
 {
-    public class Expense
-    {
-        public string name { get; set; }
-        public DateTime date { get; set; }
-        public string elapsedTime;
-        public string value;
-
-        public Expense()
-        {
-            elapsedTime = "Today";
-        }
-
-        public Expense(string n, DateTime d, string v)
-        {
-            name = n;
-            date = d;
-            elapsedTime = "Today";
-            value = v;
-        }
-
-        public string addCabinetCommas(string value)
-        {
-            return value;
-        }
-    }
-
     public class TrackerAdapter : BaseAdapter<Expense>
     {
         public List<Expense> expenses;
