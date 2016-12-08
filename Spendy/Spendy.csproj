@@ -77,6 +77,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpenseActivity.cs" />
+    <Compile Include="Fragments\DatePickerFragment.cs" />
     <Compile Include="Fragments\ExpenseDialogFragment.cs" />
     <Compile Include="Fragments\NewDialogFragment.cs" />
     <Compile Include="Adapters\InputAdapter.cs" />
@@ -123,6 +125,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\DataListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Expense.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

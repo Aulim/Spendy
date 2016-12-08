@@ -11,7 +11,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace Spendy.Fragments
+namespace Spendy
 {
     public class ExpenseDialogEventArgs : EventArgs
     {
@@ -38,6 +38,12 @@ namespace Spendy.Fragments
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
             View view = inflater.Inflate(Resource.Layout.ExpenseDialogFragment, container, false);
+            TextView dateText = view.FindViewById<TextView>(Resource.Id.expenseDialogDatePicker);
+            dateText.Text = DateTime.Now.ToShortDateString();
+            dateText.Click += (o, e) =>
+            {
+                
+            };
 
             return view;
         }

@@ -55,7 +55,26 @@ namespace Spendy
             addingText.Alpha = 100;
             addingText.Click += (o, e) =>
             {
+                /*
+                FragmentTransaction ft = FragmentManager.BeginTransaction();
+                Fragment prev = FragmentManager.FindFragmentByTag("expDialog");
+                if (prev != null) ft.Remove(prev);
+                ft.AddToBackStack(null);
 
+                ExpenseDialogFragment dialog = ExpenseDialogFragment.newInstance(null);
+                dialog.Show(ft, "expDialog");
+                dialog.Dismissed += (s, ev) =>
+                {
+                    if (ev.payload != null)
+                    {
+                        addItem(ev.payload);
+                    }
+                };
+                
+                */
+                Intent intent = new Intent(Activity, typeof(ExpenseActivity));
+                StartActivity(intent);
+                
             };
         }
     }
