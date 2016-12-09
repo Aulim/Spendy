@@ -30,7 +30,7 @@ namespace Spendy
 
         public override Dialog OnCreateDialog(Bundle savedInstanceState)
         {
-            DateTime currently = DateTime.Now;
+            DateTime currently = DateTime.Now.AddMonths(-1);
             DatePickerDialog dialog = new DatePickerDialog(Activity,
                                                            this,
                                                            currently.Year,

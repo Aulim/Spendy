@@ -74,17 +74,17 @@ namespace Spendy
             FindViewById<TextView>(Resource.Id.headerTextW).Text = data[1].timeRange;
             FindViewById<TextView>(Resource.Id.headerTextD).Text = data[2].timeRange;
 
-            FindViewById<TextView>(Resource.Id.incomesTextM).Text = "Total incomes for 30 days:\t " + data[0].totalIncomes.ToString();
-            FindViewById<TextView>(Resource.Id.incomesTextW).Text = "Total incomes for 7 days:\t " + data[1].totalIncomes.ToString();
-            FindViewById<TextView>(Resource.Id.incomesTextD).Text = "Total incomes for 1 day:\t " + data[2].totalIncomes.ToString();
+            FindViewById<TextView>(Resource.Id.incomesTextM).Text = "Total incomes for 30 days:\t " + string.Format("{0:n0}", data[0].totalIncomes);
+            FindViewById<TextView>(Resource.Id.incomesTextW).Text = "Total incomes for 7 days:\t " + string.Format("{0:n0}", data[1].totalIncomes);
+            FindViewById<TextView>(Resource.Id.incomesTextD).Text = "Total incomes for 1 day:\t " + string.Format("{0:n0}", data[2].totalIncomes);
 
-            FindViewById<TextView>(Resource.Id.expensesTextM).Text = "Total expenses for 30 days:\t " + data[0].totalExpenses.ToString();
-            FindViewById<TextView>(Resource.Id.expensesTextW).Text = "Total expenses for 7 days:\t " + data[1].totalExpenses.ToString();
-            FindViewById<TextView>(Resource.Id.expensesTextD).Text = "Total expenses for 1 day:\t " + data[2].totalExpenses.ToString();
+            FindViewById<TextView>(Resource.Id.expensesTextM).Text = "Total expenses for 30 days:\t " + string.Format("{0:n0}", data[0].totalExpenses);
+            FindViewById<TextView>(Resource.Id.expensesTextW).Text = "Total expenses for 7 days:\t " + string.Format("{0:n0}", data[1].totalExpenses);
+            FindViewById<TextView>(Resource.Id.expensesTextD).Text = "Total expenses for 1 day:\t " + string.Format("{0:n0}", data[2].totalExpenses);
 
-            FindViewById<TextView>(Resource.Id.savingsTextM).Text = "Savings:\t " + data[0].totalSaving.ToString();
-            FindViewById<TextView>(Resource.Id.savingsTextW).Text = "Savings:\t " + data[1].totalSaving.ToString();
-            FindViewById<TextView>(Resource.Id.savingsTextD).Text = "Savings:\t " + data[2].totalSaving.ToString();
+            FindViewById<TextView>(Resource.Id.savingsTextM).Text = "Savings:\t " + string.Format("{0:n0}", data[0].totalSaving);
+            FindViewById<TextView>(Resource.Id.savingsTextW).Text = "Savings:\t " + string.Format("{0:n0}", data[1].totalSaving);
+            FindViewById<TextView>(Resource.Id.savingsTextD).Text = "Savings:\t " + string.Format("{0:n0}", data[2].totalSaving);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Spendy
                 view = context.LayoutInflater.Inflate(Resource.Layout.ListItems, null);
             view.FindViewById<TextView>(Resource.Id.transactionNameText).Text = item.name;
             view.FindViewById<TextView>(Resource.Id.transactionTypeText).Text = item.type;
-            view.FindViewById<TextView>(Resource.Id.transactionValueText).Text = item.value.ToString();
+            view.FindViewById<TextView>(Resource.Id.transactionValueText).Text = string.Format("{0:n0}", item.value);
             view.FindViewById<TextView>(Resource.Id.transactionRecurrenceText).Text = recurrenceString(item.recurrenceDay);
 
             return view;

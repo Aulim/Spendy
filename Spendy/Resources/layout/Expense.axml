@@ -18,6 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="20dp"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp">
     <TextView
@@ -49,5 +50,10 @@
       android:id="@+id/expenseValueText"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
+    <Button
+      android:id="@+id/expenseAddButton"
+      android:text="Add"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"/>
   </LinearLayout>
 </LinearLayout>

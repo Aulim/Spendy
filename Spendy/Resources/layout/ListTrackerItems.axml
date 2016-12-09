@@ -8,32 +8,38 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:weightSum="100">
-    <TextView
-      android:id="@+id/ExpenseNameText"
+    android:weightSum="100"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
+    <LinearLayout
+      android:orientation="vertical"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_weight="60"/>
-    <TextView
-      android:id="@+id/ExpenseDateText"
-      android:layout_height="wrap_content"
-      android:layout_width="0dp"
-      android:layout_weight="23"/>
-    <TextView
-      android:id="@+id/ExpenseTimePassageText"
-      android:layout_height="wrap_content"
-      android:layout_width="0dp"
-      android:layout_weight="17"/>
-  </LinearLayout>
-  <LinearLayout
-   android:orientation="horizontal"
-   android:layout_width="match_parent"
-   android:layout_height="wrap_content"
-   android:weightSum="100">
-    <TextView
-      android:id="@+id/ExpenseAmountText"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="100"/>
+      android:layout_weight="50">
+      <TextView
+        android:id="@+id/ExpenseNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"/>
+      <TextView
+        android:id="@+id/ExpenseDateText"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+      <TextView
+        android:id="@+id/ExpenseTimePassageText"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+     android:orientation="vertical"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:gravity="center_vertical"
+     android:layout_weight="50">
+      <TextView
+        android:id="@+id/ExpenseAmountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
   </LinearLayout>
 </LinearLayout>

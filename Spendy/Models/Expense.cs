@@ -17,24 +17,35 @@ namespace Spendy
         public string name { get; set; }
         public DateTime date { get; set; }
         public string elapsedTime;
-        public string value;
+        public int value;
 
         public Expense()
         {
             elapsedTime = "Today";
         }
 
-        public Expense(string n, DateTime d, string v)
+        public Expense(string name, DateTime date, int value)
         {
-            name = n;
-            date = d;
-            elapsedTime = "Today";
-            value = v;
+            DateTime today = DateTime.Today;
+            int difference = (today - date).Days;
+            this.name = name;
+            this.date = date;
+            elapsedTime = (difference > 0)? (difference > 1)? string.Format("{0} days ago", difference) : "Yesterday" : "Today";
+            this.value = value;
         }
 
-        public string addCabinetCommas(string value)
+        public Expense(string expenseString)
         {
-            return value;
+            string[] param = expenseString.Split(',');
+            name = param[0];
+            date = DateTime.Parse(param[1]);
+            elapsedTime = param[2];
+            value = int.Parse(param[3]);
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0},{1},{2},{3}", name, date.ToString(), elapsedTime, value);
         }
     }
 

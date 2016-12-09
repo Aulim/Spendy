@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Android.Support.V4.App;
+using Fragment = Android.Support.V4.App.Fragment;
+using FragmentActivity = Android.Support.V4.App.FragmentActivity;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -53,9 +55,9 @@ namespace Spendy
                 view = context.LayoutInflater.Inflate(Resource.Layout.ListTrackerItems, null);
 
             view.FindViewById<TextView>(Resource.Id.ExpenseNameText).Text = item.name;
-            view.FindViewById<TextView>(Resource.Id.ExpenseDateText).Text = item.date.ToString();
+            view.FindViewById<TextView>(Resource.Id.ExpenseDateText).Text = item.date.ToString("d MMM yyyy");
             view.FindViewById<TextView>(Resource.Id.ExpenseTimePassageText).Text = item.elapsedTime;
-            view.FindViewById<TextView>(Resource.Id.ExpenseAmountText).Text = item.value;
+            view.FindViewById<TextView>(Resource.Id.ExpenseAmountText).Text = string.Format("{0:n0}", item.value);
 
             return view;
 
